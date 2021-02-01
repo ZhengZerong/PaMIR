@@ -1,0 +1,9 @@
+dataset_example/
+*.zip
+*.gz
+*.7z
+*.tar
+*.pyc
+__pycache__/
+.idea/
+.vscode/

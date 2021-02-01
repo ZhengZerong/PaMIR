@@ -1,0 +1,8 @@
+.vscode/
+.idea/
+__pycache__/
+*.dll
+*.exe
+*.so
+*.obj
+
