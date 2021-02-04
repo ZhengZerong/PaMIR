@@ -1,4 +1,4 @@
-dataset_example/
+dataset_example_bk/
 *.zip
 *.gz
 *.7z
@@ -7,3 +7,4 @@ dataset_example/
 __pycache__/
 .idea/
 .vscode/
+results/

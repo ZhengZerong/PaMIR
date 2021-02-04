@@ -4,7 +4,7 @@
 
 [![report](https://img.shields.io/badge/arxiv-report-red)](https://arxiv.org/abs/2007.03858)
 
-This repository contains a pytorch implementation of "[PaMIR: Parametric Model-Conditioned Implicit Representation for Image-based Human Reconstruction](https://arxiv.org/abs/2007.03858)". Tested with PyTorch 1.7.0 on Ubuntu 18.04. 
+This repository contains a pytorch implementation of "[PaMIR: Parametric Model-Conditioned Implicit Representation for Image-based Human Reconstruction](https://arxiv.org/abs/2007.03858)". Tested with PyTorch 1.7.0 on Ubuntu 18.04, CUDA 11.0. 
 
 
 [Project Page](http://www.liuyebin.com/pamir/pamir.html)
@@ -26,12 +26,15 @@ primaryClass={cs.CV}
 ## Demo
 Please run the following commands to download the necessary assests (including the pre-trained models) first:
 ```bash
-# not necessary currently because we zipped them already
+cd ./networks
+wget https://github.com/ZhengZerong/PaMIR/releases/download/v0.0/results.zip
+# or this link: wget https://cloud.tsinghua.edu.cn/seafhttp/files/ca2188a1-6923-42a4-8131-edd0e683bf57/results.zip
+unzip -o results.zip
 ```
 
 After that, run the following script to evaluate the network:
 ```bash
-cd network
+cd ./networks
 python main_test.py
 ```
 This command will generate the texture models with the fitted SMPLs for the example input images in ```./network/results/test_data/```. Note that we assume the input images are tightly cropped with the background removed and the height of the persons is about 80% of the image height (Please see the example input images we provide). 
@@ -39,22 +42,24 @@ This command will generate the texture models with the fitted SMPLs for the exam
 
 
 ## Dataset Generation for Network Training
-In ```dataset_example```, we provide an example data item, which contains a textured meshes and a SMPL model fitted to the mesh. To generate the training data, please run:
+In ```dataset_example```, we provide an example data item, which contains a textured meshes and a SMPL model fitted to the mesh. The mesh is downloaded from [RenderPeople](https://renderpeople.com/sample/free/rp_dennis_posed_004_OBJ.zip).  To generate the training data, please run:
 ```bash
 cd ./data
+python main_normalize_mesh.py                         # we normalize all scans into a unit bounding box
 python main_calc_prt.py
 python main_render_images.py
 python main_sample_occ.py
-python main_associate_points_with_smpl_vertices.py
+python main_associate_points_with_smpl_vertices.py    # requires SMPL fitting
 cd ..
 ```
+Note that the last python script requires SMPL model fitted to the scans. To do so, you can use our tool released at [this link](https://github.com/ZhengZerong/MultiviewSMPLifyX). 
 
-## Train the Geometry Network
+## Train the Network
 Please run the following command to train the network:
 ```bash
-cd ./network
-bash ./scripts/train_script_geo.sh  # geometry module
-bash ./scripts/train_script_tex.sh  # texture module
+cd ./networks
+bash ./scripts/train_script_geo.sh  # geometry network
+bash ./scripts/train_script_tex.sh  # texture network
 ```
 
 ## Acknowledgement

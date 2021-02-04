@@ -19,7 +19,7 @@ runtime configuration
 """
 mesh_data_dir = '../dataset_example/mesh_data'
 output_data_dir = '../dataset_example/image_data'
-view_num = 60
+view_num = 360
 cam_f = 5000
 cam_dist = 10
 img_res = 512
