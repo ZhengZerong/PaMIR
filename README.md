@@ -6,6 +6,9 @@
 
 This repository contains a pytorch implementation of "[PaMIR: Parametric Model-Conditioned Implicit Representation for Image-based Human Reconstruction](https://arxiv.org/abs/2007.03858)". Tested with PyTorch 1.7.0 on Ubuntu 18.04, CUDA 11.0. 
 
+**NOTE**: The current models are trained on private Twindom scans, which are bias towards upright standing poses. 
+Fortunately, we have collected [THUman 2.0](http://www.liuyebin.com/Function4D/Function4D.html), a new dataset containing 500 high-quality 3D human scans with more variety in body poses.
+After the dataset is ready and released, we will provide the pretrained models for it. Stay tuned!
 
 [Project Page](http://www.liuyebin.com/pamir/pamir.html)
 ![Teaser Image](http://www.liuyebin.com/pamir/assets/results_large.jpg)
