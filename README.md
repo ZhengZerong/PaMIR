@@ -24,7 +24,7 @@ primaryClass={cs.CV}
 ```
 
 ## Demo
-Please run the following commands to download the necessary assests (including the pre-trained models) first:
+Please run the following commands to download necessary assets (including the pre-trained models):
 ```bash
 cd ./networks
 wget https://github.com/ZhengZerong/PaMIR/releases/download/v0.0/results.zip
@@ -33,13 +33,13 @@ unzip -o results.zip
 cd ..
 ```
 
-After that, run the following script to evaluate the network:
+After that, run the following script to test the pre-trained network:
 ```bash
 cd ./networks
 python main_test.py
 cd ..
 ```
-This command will generate the texture models with the fitted SMPLs for the example input images in ```./network/results/test_data*/```. Note that we assume the input images are tightly cropped with the background removed and the height of the persons is about 80% of the image height (Please see the example input images we provide). 
+This command will generate the textured reconstruction with the fitted SMPLs for the example input images in ```./network/results/test_data*/```. Note that we assume the input images are tightly cropped with the background removed and the height of the persons is about 80% of the image height (Please see the example input images we provide). 
 
 
 
