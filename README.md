@@ -31,7 +31,7 @@ Please run the following commands to download necessary assets (including the pr
 ```bash
 cd ./networks
 wget https://github.com/ZhengZerong/PaMIR/releases/download/v0.0/results.zip
-# or this link: wget https://cloud.tsinghua.edu.cn/seafhttp/files/ca2188a1-6923-42a4-8131-edd0e683bf57/results.zip
+# or this link: wget https://cloud.tsinghua.edu.cn/seafhttp/files/07f981c7-a421-4d94-8f3f-1ab6777f9b48/results.zip
 unzip -o results.zip
 cd ..
 ```
