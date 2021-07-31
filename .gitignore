@@ -7,4 +7,5 @@ dataset_example_bk/
 __pycache__/
 .idea/
 .vscode/
-results/
+results*/
+debug*/

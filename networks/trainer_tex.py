@@ -83,7 +83,7 @@ class Trainer(BaseTrainer):
         # read energy weights
         self.loss_weights = {
             'tex': 1.0,
-            'att': 0.05,
+            'att': 0.005,
         }
 
         logging.info('#trainable_params = %d' %
@@ -121,9 +121,10 @@ class Trainer(BaseTrainer):
             vol = self.voxelization(gt_vert_cam)    # we simply use ground-truth SMPL for when training texture module
             img_feat_geo = self.pamir_net.get_img_feature(img, no_grad=True)
 
-        output_clr_, output_clr, _, smpl_feat = self.pamir_tex_net.forward(
+        output_clr_, output_clr, output_att, smpl_feat = self.pamir_tex_net.forward(
             img, vol, pts, pts_proj, img_feat_geo)
         losses['tex'] = self.tex_loss(output_clr, gt_clr) + self.tex_loss(output_clr_, gt_clr)
+        losses['att'] = self.attention_loss(output_att)
 
         # calculates total loss
         total_loss = 0.
