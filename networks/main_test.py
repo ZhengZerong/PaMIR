@@ -116,8 +116,10 @@ def main_test_texture(test_img_dir, out_dir, pretrained_checkpoint_pamir,
 
 if __name__ == '__main__':
     iternum=50
-    input_image_dir = './results/test_data_real/'
-    output_dir = './results/test_data_real/'
+    input_image_dir = './results/test_data/'
+    output_dir = './results/test_data/'
+    # input_image_dir = './results/test_data_real/'
+    # output_dir = './results/test_data_real/'
     # input_image_dir = './results/test_data_rendered/'
     # output_dir = './results/test_data_rendered/'
 
