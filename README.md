@@ -9,6 +9,8 @@ This repository contains a pytorch implementation of "[PaMIR: Parametric Model-C
 **NOTE**: The current models are trained on private Twindom scans, which are bias towards upright standing poses. 
 Fortunately, we have collected [THUman 2.0](http://www.liuyebin.com/Function4D/Function4D.html), a new dataset containing 500 high-quality 3D human scans with more variety in body poses. You can use THUman 2.0 to train/fine-tune our PaMIR model or your own models!
 
+**NOTE 2021/11/16**: The pre-trained model I previously uploaded is not the correct one. I have replaced it with the correct model. Sincere apology!
+
 [Project Page](http://www.liuyebin.com/pamir/pamir.html)
 ![Teaser Image](http://www.liuyebin.com/pamir/assets/results_large.jpg)
 
